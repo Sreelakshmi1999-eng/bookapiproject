@@ -1,5 +1,5 @@
 const books = [{
-    ISBN: "12345Book",
+    ISBN: "12345Books",
     title: "GEtting Starting with MERN",
     pubDAte: "02/04/2021",
     language: "en",
@@ -12,7 +12,7 @@ const books = [{
 const author = [{
     id:"1",
     name:"Pavan",
-    books:["12345Books"],
+    books:["12345Books","1234564"],
 },
 {
     id:"2",

@@ -1,4 +1,5 @@
 
+const { json } = require("express");
 const express = require("express");
 //Database
  const database = require("./database");
@@ -120,6 +121,86 @@ if (getSpecificAuthor.length === 0) {
 
 });
 
+
+/*
+Route          /author/book
+Description    Get list of authors based on books 
+Access         Public
+Parameter      isbn
+Methods        Get
+ */
+
+
+booky.get("/author/book/:isbn", (req,res)=>{
+    const getSpecificAuthor = database.author.filter((author) => author.books.includes(req.params.isbn)  );
+
+if (getSpecificAuthor.length === 0) {
+    return res.json({
+        error: `NO book found for the books of ${req.params.isbn}`,
+    });
+}
+
+    return res.json({author:getSpecificAuthor});
+
+});
+
+
+/*
+Route          /P
+Description    Get all publications
+Access         Public
+Parameter      None
+Methods        Get
+ */
+
+booky.get("/P",(req,res)=>{
+    return res.json({Publications: database.publications});
+  });
+
+
+ /*
+Route          /publications
+Description    Get all publications
+Access         Public
+Parameter      name
+Methods        Get
+ */ 
+
+booky.get("/P/:id", (req,res)=>{
+    const getSpecificPubli = database.publications.filter((publication) => publication.id === req.params.id);
+
+if (getSpecificPubli.length === 0) {
+    return res.json({
+        error: `NO book found for the Publication of ${req.params.id}`,
+    });
+}
+
+    return res.json({publication:getSpecificPubli});
+
+});
+
+
+/*
+Route          /P/publi
+Description    Get list of publications based on books 
+Access         Public
+Parameter      isbn
+Methods        Get
+ */
+
+
+booky.get("/P/publi/:isbn", (req,res)=>{
+    const getSpecificPubli = database.publications.filter((publication) => publication.books.includes(req.params.isbn)  );
+
+if (getSpecificPubli.length === 0) {
+    return res.json({
+        error: `NO book found for the publications of ${req.params.isbn}`,
+    });
+}
+
+    return res.json({publication:getSpecificPubli});
+
+});
 
 
 booky.listen(3000, () => console.log("Server is Running!!😍😍"));
