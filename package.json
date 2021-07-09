@@ -9,8 +9,16 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.9"
   },
   "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sreelakshmi1999-eng/bookapiproject.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sreelakshmi1999-eng/bookapiproject/issues"
+  },
+  "homepage": "https://github.com/Sreelakshmi1999-eng/bookapiproject#readme",
   "description": ""
 }

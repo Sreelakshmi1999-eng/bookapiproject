@@ -10,19 +10,19 @@ const books = [{
 },];
 
 const author = [{
-    id:"1",
+    id: 1,
     name:"Pavan",
     books:["12345Books","1234564"],
 },
 {
-    id:"2",
+    id: 2,
     name:"Elon Musk",
     books:["12345Books"],
 
 },];
 
 const publications = [{
-    id:"1",
+    id: 1,
     name:"sars",
     books:["12345Books"],
 },];
